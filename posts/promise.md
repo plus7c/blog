@@ -1,0 +1,91 @@
+---
+title: "Promise链"
+subtitle: "#力扣Day4"
+date: "2020-12-27"
+---
+
+
+### 什么是Promise
+
+如何直观地理解Promise？
+
+在油管上看到一个比较有趣的类比，可以把Promise看成是用手机打车的过程。
+
+当司机收到新的订单时，一个新的`Promise`就创建了，此时乘客将在上车点等待司机，当司机到达或者临时取消订单时，司机会通过`resolve`或者`reject`来告知乘客，此时`Promise`就完成了，乘客可以上车（调用`then`函数）。
+
+```
+var callDriver = new Promise(function(resolve, reject) {//呼叫司机
+
+  setTimeout(() => resolve('抵达上车点'), 1000);//司机正在前往上车点的路上，耗时1000ms
+
+}).then(function(result) {//收到司机的抵达信息
+
+  alert(result); // 抵达上车点
+
+})
+```
+
+### Promise链
+
+通过Promise链可以实现一个接一个地执行异步任务。
+
+当`then`处理程序返回一个**普通值**时，它将成为该 promise 的 result，所以将使用它调用下一个 `.then`
+
+```
+
+new Promise(function(resolve, reject) {
+
+  setTimeout(() => resolve(1), 1000); // (*)
+
+}).then(function(result) { // (**)
+
+  alert(result); // 1
+  return result * 2;
+
+}).then(function(result) { // (***)
+
+  alert(result); // 2
+  return result * 2;
+
+}).then(function(result) {
+
+  alert(result); // 4
+  return result * 2;
+
+});
+```
+
+`then`除了可以返回**普通值**外，还可以返回一个新的`Promise`对象，来构建**异步行为链**
+
+```
+new Promise(function(resolve, reject) {
+
+  setTimeout(() => resolve(1), 1000);
+
+}).then(function(result) {
+
+  alert(result); // 1
+
+  return new Promise((resolve, reject) => { // (*)
+    setTimeout(() => resolve(result * 2), 1000);
+  });
+
+}).then(function(result) { // (**)
+
+  alert(result); // 2
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(result * 2), 1000);
+  });
+
+}).then(function(result) {
+
+  alert(result); // 4
+
+});
+
+```
+
+此时第一个`then`返回的`Promise`对象的resolve值在完成**执行器函数**（这里指setTimeout）后可以传递给下一个`then`，下一个`then`继续返回一个新的`Promise`，依次类推，此时输出与前面的示例相同：1 → 2 → 4，但是现在每次 `alert` 调用之间会有 1 秒钟的延迟，从而实现带有异步效果的Promise链。
+
+查看更多细节可传送至：https://zh.javascript.info/promise-chaining

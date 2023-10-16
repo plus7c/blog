@@ -1,0 +1,88 @@
+---
+title: "for的几大用法、reduce"
+subtitle: "#力扣day2"
+date: "2021-08-14"
+---
+
+之前一直没有弄清for...in、for...of和foreach的区别，今天特意学习了一下
+
+### for...in
+`for...in`用于循环遍历对象的属性名（键名），包括原型链上的属性，因此，在使用 `for...in` 循环遍历对象时，需要使用 `hasOwnProperty()` 方法来过滤掉原型链上的属性。
+
+``````
+for (const key in object) {
+  if (object.hasOwnProperty(key)) {
+    // 在这里执行迭代操作
+  }
+}
+``````
+
+### for...of
+```for...of```平时用得比较多，用来遍历可迭代对象（数组、字符串、Set、Map 等）中的元素，遍历的元素常用`const`来声明。
+
+``````
+const array = [1, 2, 3, 4, 5];
+
+for (const element of array) {
+  console.log(element);
+}
+``````
+
+### forEach
+
+`forEach`是数组对象的一个方法，用于遍历数组的每个元素并执行指定的回调函数。
+
+``````
+const array = [1, 2, 3, 4, 5];
+
+array.forEach(function(element, index, array) {
+  console.log(array[index]);
+});
+``````
+
+也可以用箭头函数来写回调函数，效果一样，更简单明了
+
+``````
+const array = [1, 2, 3, 4, 5];
+
+array.forEach((element)=>{
+    console.log(element)
+})
+
+``````
+
+
+### reduce
+
+刷题的时候还了解到了reduce这个数组方法,对数组中的元素进行累加时很方便。
+
+#### reduce的语法
+
+> array.reduce(callback(accumulator, currentValue, index, array), initialValue)
+
+其中，initialValue为可选值
+
+
+``````
+const array = [1, 2, 3, 4, 5];
+
+const sum = array.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // 输出：15
+``````
+
+【注意】：`reduce()` 返回的值将是最后一次回调返回值（`15`）。
+
+实现reduce的大致原理（LC#2626）
+
+``````
+var reduce = function (nums, fn, init) {
+  let val = init
+  for (value of nums) {
+    val = fn(val, value)
+  }
+  return val
+};
+``````

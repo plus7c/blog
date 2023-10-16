@@ -1,0 +1,61 @@
+---
+title: "什么是闭包和作用域？"
+subtitle: "#力扣Day1"
+date: "2021-08-27"
+---
+
+### 什么是闭包
+-   可以将闭包理解包含有记忆属性的变量和函数的一个对象 ，同时闭包必须返回一个对象（一般返回函数，函数也是一种特殊的对象），例子如下：
+
+```
+function makeAdder(x) {
+  return function (y) {
+    return x + y;
+  };
+}
+
+const add5 = makeAdder(5);
+const add10 = makeAdder(10);
+
+console.log(add5(2)); // 7
+console.log(add10(3)); // 13
+```
+上述例子中makeAdder()是一个闭包，其本身接收一个参数（比如说例子中的5），该参数在函数调用后会保存起来，搭配其内部的函数可以组装成一个新的函数add5，而add5()又可以接收新的参数来求5和新参数之和，依次类推。
+
+
+除了返回一个函数之外，闭包还可以返回一个普通对象，例子如下：
+
+【题目描述】
+
+请你编写一个名为 `expect` 的函数，用于帮助开发人员测试他们的代码。它应该接受任何值 `val` 并返回一个包含以下两个函数的对象。
+
+-   `toBe(val)` 接受另一个值并在两个值相等（ `===` ）时返回 `true` 。如果它们不相等，则应抛出错误 `"Not Equal"` 。
+-   `notToBe(val)` 接受另一个值并在两个值不相等（ `!==` ）时返回 `true` 。如果它们相等，则应抛出错误 `"Equal"` 。
+
+```
+var expect = function (val) {
+    return {
+        exp: val,
+        toBe: function (val) {
+            if (this.exp === val)
+                return true
+            throw new Error('Not Equal')
+        },
+        notToBe: function (val) {
+            if (this.exp !== val)
+                return true
+            throw new Error('Equal')
+        },
+    }
+};
+```
+上述例子中，闭包返回一个包含两个函数的对象，测试时输入expect(5).toBe(5)或者expect(5).notToBe(5)即可验证两个值是否相等，将两个方法封装在了一起，有点像c++中的类。
+### 作用域
+-   作用域类型分**块级作用域**和**函数作用域**。块级作用域是指由一对花括号 `{}` 包裹的代码块内部的作用域。函数作用域是指在函数内部声明的变量只在该函数内部可见。但如果在花括号中使用var，那么在花括号外部也能访问该变量。此时该var变量为全局变量，即window对象的属性。
+
+<!---->
+### var VS let
+-   var会有变量提升（和函数声明一样），可在声明前调用，但其值为undefined，而let不会变量提升，因此在块级作用域中，尽量使用let，能避免变量泄露和重复声明变量的问题。（某些情况下可能需要重复声明变量）
+
+### this
+this指向当前的对象，因此在函数中可以引用对象中其他对象字面量。（在小程序开发中尤为常见）
