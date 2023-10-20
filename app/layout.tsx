@@ -9,7 +9,7 @@ export default function RootLayout({
 }) {
   const header = (
     <header>
-      <div className="text-center bg-slate-800 p-8 my-6 rounded-md">
+      <div className="text-center bg-sky-900 p-8 my-6 rounded-md">
         <Image
           src="/Z.png"
           width={40}
@@ -18,9 +18,12 @@ export default function RootLayout({
           alt={"logo"}
         />
         <Link href="/">
-          <h1 className="text-2xl text-white font-bold mt-4">Zplus7's Blog</h1>
+          <h1 className="text-2xl text-white font-bold mt-4">Zplus7's Space</h1>
         </Link>
-        <p className="text-slate-300">🤟 Welcome to my tech blog. 💻</p>
+        <div className="flex flex-row place-content-center mt-3 text-white">
+          <Link href="/about" className="underline hover:underline-offset-4 mr-3" >about</Link>
+          <a className="underline hover:underline-offset-4 mr-3" href="/">blog</a>
+        </div>
       </div>
     </header>
   );
@@ -28,7 +31,7 @@ export default function RootLayout({
   const footer = (
     <footer>
       <div className="border-t border-slate-400 mt-12 py-6 text-center text-slate-400">
-        <h3>Designed by Pixegami</h3>
+        <h3>Designed by Tailwind</h3>
       </div>
     </footer>
   );
