@@ -18,7 +18,7 @@ export default function RootLayout({
           alt={"logo"}
         />
         <Link href="/">
-          <h1 className="text-2xl text-white font-bold mt-4">Zplus7's Space</h1>
+          <h1 className="text-2xl text-white font-bold mt-4">Space for Zplus7</h1>
         </Link>
         <div className="flex flex-row place-content-center mt-3 text-white">
           <Link href="/about" className="underline hover:underline-offset-4 mr-3" >about</Link>
