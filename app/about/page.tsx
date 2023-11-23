@@ -25,7 +25,7 @@ function About() {
       - 🔧 &nbsp; Visual Studio code | Android Studio | PyCharm | Git | Github Copilot */}
       
       <div className="flex ">
-        <img className="m-auto" alt="GIF" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif" width={300} height={250} />
+        <img className="m-auto" alt="GIF" src="/images/gif3.gif" width={300} height={250} />
       </div>
 
       <strong> 联系方式 </strong>

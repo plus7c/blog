@@ -10,14 +10,15 @@ export default function RootLayout({
   const header = (
     <header>
       <div className="text-center bg-sky-900 p-8 my-6 rounded-md">
-        <Image
-          src="/Z.png"
-          width={40}
-          height={40}
-          className="mx-auto rounded"
-          alt={"logo"}
-        />
+
         <Link href="/">
+          <Image
+            src="/Z.png"
+            width={40}
+            height={40}
+            className="mx-auto rounded"
+            alt={"logo"}
+          />
           <h1 className="text-2xl text-white font-bold mt-4">Zplus7</h1>
         </Link>
         <div className="flex flex-row place-content-center mt-3 text-white">
