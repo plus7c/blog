@@ -9,7 +9,7 @@ export default function RootLayout({
 }) {
   const header = (
     <header>
-      <div className="text-center bg-sky-900 p-8 my-6 rounded-md">
+      <div className="text-center  p-8 my-6 rounded-md">
 
         <Link href="/">
           <Image
@@ -19,11 +19,11 @@ export default function RootLayout({
             className="mx-auto rounded"
             alt={"logo"}
           />
-          <h1 className="text-2xl text-white font-bold mt-4">Zplus7</h1>
+          <h1 className="text-2xl text-black font-bold mt-4">Zplus7</h1>
         </Link>
-        <div className="flex flex-row place-content-center mt-3 text-white">
-          <Link href="/about" className="underline hover:underline-offset-4 mr-3" >about</Link>
-          <a className="underline hover:underline-offset-4 mr-3" href="/">blog</a>
+        <div className="flex flex-row place-content-center mt-3 text-black">
+          <Link href="/about" className="underline underline-offset-2 hover:underline-offset-4 mr-3" >about</Link>
+          <a className="underline underline-offset-2 hover:underline-offset-4 focus:underline-offset-4 mr-3" href="/">blog</a>
         </div>
       </div>
     </header>
@@ -41,7 +41,7 @@ export default function RootLayout({
     <html>
       <head />
       <body>
-        <div className="mx-auto  max-w-2xl px-6">
+        <div className="mx-auto max-w-5xl px-6">
           {header}
           {children}
           {footer}

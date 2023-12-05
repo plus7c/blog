@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4359214 */
+  src: url('iconfont.woff2?t=1701746962097') format('woff2'),
+       url('iconfont.woff?t=1701746962097') format('woff'),
+       url('iconfont.ttf?t=1701746962097') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-21baogaozongjiezhuanqu:before {
+  content: "\e6e7";
+}
+
+.icon--reading-:before {
+  content: "\e610";
+}
+
