@@ -2,11 +2,13 @@ import Link from "next/link";
 import { PostMetadata } from "./PostMetadata";
 import { Card } from "antd";
 import '../styles/font/iconfont.css'
-const PostPreview = (props: PostMetadata) => {
+const PostPreview = (props: any) => {
+
   return (
     <>
       <link rel="stylesheet" href="../styles/iconfont.css" />
-      <Link href={`/posts/${props.slug}`}>
+      <Link href={`/posts/${props._id}`}>
+     
         <Card
           size="small"
           hoverable

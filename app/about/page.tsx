@@ -1,4 +1,7 @@
-
+export const metadata = {
+  title:"About Me",
+  description:"This is about me"
+}
 function About() {
   return (
     <div className="max-w-lg mx-auto ">
