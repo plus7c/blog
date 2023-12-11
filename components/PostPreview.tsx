@@ -14,7 +14,6 @@ const PostPreview = (props: any) => {
           style={{ width: 270, height: 300 }}
           cover={<img alt="example" src={props.image} width="270" height="150" />}
         >
-
           <div className="flex flex-col">
             <p className=" text-base text-sky-500 hover:underline underline-offset-4 mb-1">{props.title}</p>
             <p className="mt-2 text-slate-700">{props.subtitle}</p>
@@ -23,11 +22,8 @@ const PostPreview = (props: any) => {
               <i className="iconfont icon-21baogaozongjiezhuanqu ml-2"></i>
               <span>{props.category}</span>
             </p>
-
           </div>
-
         </Card>
-
       </Link>
     </>
 
