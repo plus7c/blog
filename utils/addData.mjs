@@ -36,7 +36,9 @@ const handleAdd = async (post) => {
     //     console.log(err);
     // }
     try {
-        await fetch("http://blog.zplus7.space/api/posts", {
+        const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+        
+        await fetch(`${apiBaseUrl}/api/posts`, {
             method: "POST",
             body: JSON.stringify({
                 title,

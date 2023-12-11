@@ -8,7 +8,7 @@ const PostPreview = (props: any) => {
     <>
       <link rel="stylesheet" href="../styles/font/iconfont.css" />
       <Link href={`/posts/${props._id}`}>
-     
+
         <Card
           size="small"
           hoverable

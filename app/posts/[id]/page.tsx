@@ -27,7 +27,12 @@ async function getData(id:string) {
   //   cache: "no-cache"
   // });
   
-  const res = await fetch(`http://blog.zplus7.space/api/posts/${id}`, {
+  // const res = await fetch(`http://blog.zplus7.space/api/posts/${id}`, {
+  //   cache: "no-cache"
+  // });
+  
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const res = await fetch(`${apiBaseUrl}/api/posts/${id}`, {
     cache: "no-cache"
   });
   
