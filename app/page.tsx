@@ -10,7 +10,7 @@ async function getData() {
   //   cache: "no-cache"
   // });
 
-  // const res = await fetch("http://blog.zplus7.space/api/posts", {
+  // const res = await fetch("https://blog.zplus7.space/api/posts", {
   //   cache: "no-cache"
   // });
   try {
@@ -18,7 +18,6 @@ async function getData() {
     const res = await fetch(`${apiBaseUrl}/api/posts`, {
       cache: "no-cache"
     });
-
     return res.json();
   } catch (err) {
     console.log(err)
