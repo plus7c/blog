@@ -18,10 +18,7 @@ async function getData() {
     const res = await fetch(`${apiBaseUrl}/api/posts`, {
       cache: "no-cache"
     });
-    if (!res.ok) {
-      console.error(`Error fetching posts: ${res.status} - ${res.statusText}`);
-      throw new Error("获取博客列表失败")
-    }
+
     return res.json();
   } catch (err) {
     console.log(err)
