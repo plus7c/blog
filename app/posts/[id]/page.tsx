@@ -22,10 +22,15 @@ import { notFound } from "next/navigation";
 
 
 async function getData(id:string) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  //开发环境
+  // const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  //   cache: "no-cache"
+  // });
+  
+  const res = await fetch(`http://blog.zplus7.space/api/posts/${id}`, {
     cache: "no-cache"
   });
-
+  
   if (!res.ok) {
     return notFound();
   }

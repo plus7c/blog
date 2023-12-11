@@ -20,8 +20,23 @@ const handleAdd = async (post) => {
     const category = post.data.category;
     const content = post.content;
     //console.log("content为",post);
+    // try {
+    //     await fetch("http://localhost:3000/api/posts", {
+    //         method: "POST",
+    //         body: JSON.stringify({
+    //             title,
+    //             subtitle,
+    //             image,
+    //             content,
+    //             date,
+    //             category,
+    //         }),
+    //     });
+    // } catch (err) {
+    //     console.log(err);
+    // }
     try {
-        await fetch("http://localhost:3000/api/posts", {
+        await fetch("http://blog.zplus7.space/api/posts", {
             method: "POST",
             body: JSON.stringify({
                 title,
@@ -35,6 +50,7 @@ const handleAdd = async (post) => {
     } catch (err) {
         console.log(err);
     }
+
 };
 
 handleAdd(post)

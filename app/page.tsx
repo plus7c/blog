@@ -5,9 +5,15 @@ import Show from "../components/showAndNav";
 
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/posts", {
+  //开发环境
+  // const res = await fetch("http://localhost:3000/api/posts", {
+  //   cache: "no-cache"
+  // });
+
+  const res = await fetch("http://blog.zplus7.space/api/posts", {
     cache: "no-cache"
   });
+
 
   if(!res.ok){
     throw new Error("获取博客列表失败")
