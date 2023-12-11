@@ -1,5 +1,5 @@
 
-import getPostMetadata from "../components/getPostMetadata";
+//import getPostMetadata from "../components/getPostMetadata";
 
 import Show from "../components/showAndNav";
 

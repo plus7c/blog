@@ -1,7 +1,7 @@
-import fs from "fs";
+//import fs from "fs";
 import Markdown from "markdown-to-jsx";
-import matter from "gray-matter";
-import getPostMetadata from "../../../components/getPostMetadata";
+//import matter from "gray-matter";
+//import getPostMetadata from "../../../components/getPostMetadata";
 import { notFound } from "next/navigation";
 
 // const getPostContent = (slug: string) => {
@@ -35,7 +35,7 @@ async function getData(id:string) {
   const res = await fetch(`${apiBaseUrl}/api/posts/${id}`, {
     cache: "no-cache"
   });
-  
+
   if (!res.ok) {
     return notFound();
   }
