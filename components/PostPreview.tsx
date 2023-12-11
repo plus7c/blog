@@ -6,7 +6,7 @@ const PostPreview = (props: any) => {
 
   return (
     <>
-      <link rel="stylesheet" href="../styles/iconfont.css" />
+      <link rel="stylesheet" href="../styles/font/iconfont.css" />
       <Link href={`/posts/${props._id}`}>
      
         <Card
