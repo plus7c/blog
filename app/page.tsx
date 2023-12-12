@@ -19,12 +19,11 @@ async function getData() {
     const res = await fetch(url, {
       cache: "no-cache"
     });
+    console.log('res的内容为', res)
     return res.json();
   } catch (err) {
     console.log(err)
   }
-
-
 
 }
 
