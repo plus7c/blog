@@ -15,7 +15,7 @@ async function getData() {
   // });
   try {
     //const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-    const url = "https://blog.zplus7.blog/api/posts";
+    const url = "https://blog.zplus7.space/api/posts";
     const res = await fetch(url, {
       cache: "no-cache"
     });
