@@ -15,11 +15,12 @@ async function getData() {
   // });
   try {
     //const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-    const url = "https://blog.zplus7.space/api/posts";
+    const url = "https://zplus777-git-main-plus7cs-projects.vercel.app/";
     const res = await fetch(url, {
       cache: "no-cache"
     });
     console.log('res的内容为', res)
+
     return res.json();
   } catch (err) {
     console.log(err)
