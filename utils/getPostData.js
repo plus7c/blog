@@ -6,18 +6,13 @@ import Post from "@/models/Post"
 export const getPostData = async () => {
     //fetch
 
+    
     try {
+
         await connect()
-    } catch (err) {
-        console.log("连接数据库失败~~")
-    }
-
-
-    try {
-
-
         const posts = await Post.find()
-        console.log("成功获取博客列表数据【API】")
+        console.log("成功获取博客列表数据【API】",posts)
+        
         return new NextResponse(JSON.stringify(posts), { status: 200 })
 
     } catch (err) {
