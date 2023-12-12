@@ -33,9 +33,9 @@ async function getData() {
 
 
 export default async function HomePage() {
-  const postData = await getPostData();
+  const data = await getPostData();
 
-  const data = postData.json();
+  console.log("前端的数据为",data)
   //const data = await getData();
 
   return (
