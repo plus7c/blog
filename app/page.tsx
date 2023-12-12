@@ -15,7 +15,8 @@ async function getData() {
   // });
   try {
     const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-    const res = await fetch(`${apiBaseUrl}/api/posts`, {
+    const url = new URL('/api/posts', apiBaseUrl).href;
+    const res = await fetch(url, {
       cache: "no-cache"
     });
     return res.json();
