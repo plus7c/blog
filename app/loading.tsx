@@ -1,4 +1,4 @@
-import styles from './Loading.module.css'; // 假设你有一个样式文件
+import styles from '../style/loading.module.css'; // 假设你有一个样式文件
 
 const Loading = () => {
   return (
