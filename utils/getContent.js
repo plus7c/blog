@@ -10,7 +10,7 @@ export const getContent = async (id) => {
 
         await connect()
         const posts = await Post.findById(id)
-        console.log("成功获取博客列表数据【API】",posts)
+        console.log("成功获取博客列表数据【API】")
         return posts;
         //return new NextResponse(JSON.stringify(posts), { status: 200 })
 
