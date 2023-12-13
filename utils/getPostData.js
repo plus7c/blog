@@ -16,6 +16,7 @@ export const getPostData = async () => {
         //return new NextResponse(JSON.stringify(posts), { status: 200 })
 
     } catch (err) {
+        console.log("调用获取博客列表失败【utils】")
         return new NextResponse("调用获取博客列表失败【API】", { status: 500 })
     }
 
