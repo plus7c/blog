@@ -1,7 +1,7 @@
 
 //import getPostMetadata from "../components/getPostMetadata";
 
-import Show from "../components/showAndNav";
+import Wrap from "../components/Wrap";
 import {getPostData} from "@/utils/getPostData"
 
 async function getData() {
@@ -40,7 +40,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Show postMetadata={data}></Show>
+      <Wrap postMetadata={data}></Wrap>
     </>
   );
 };

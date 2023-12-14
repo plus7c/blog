@@ -1,9 +1,9 @@
 'use client'
 import { Pagination, ConfigProvider } from "antd"
-import PostPreview from "../components/PostPreview";
+import PostPreview from "./PostPreview";
 import { useState } from "react";
 
-export default function Show(props: any) {
+export default function Wrap(props: any) {
 
 
     const [minValue, setMinValue] = useState(0);
