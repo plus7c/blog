@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 
 const getPostContent = (slug) => {
-    const folder = "posts/";
+    const folder = "../posts/";
     const file = `${folder}${slug}.md`;
     const content = fs.readFileSync(file, "utf8");
     const matterResult = matter(content);
@@ -10,7 +10,7 @@ const getPostContent = (slug) => {
     return matterResult;
 };
 
-const post = getPostContent("2023-12-14");
+const post = getPostContent("2024-01-01");
 
 const handleAdd = async (post) => {
     const title = post.data.title;
