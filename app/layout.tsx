@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import "../styles/globals.css";
 
+
+export const metadata = {
+  title:"Zplus7",
+  description:"This is my blog"
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -9,17 +15,17 @@ export default function RootLayout({
 }) {
   const header = (
     <header>
-      <div className="text-center  p-8 my-6 rounded-md">
+      <div className="p-8 my-6 rounded-md">
 
         <Link href="/">
           <Image
-            src="/Z.png"
-            width={40}
-            height={40}
+            src="/images/testPicture.jpg"
+            width={120}
+            height={120}
             className="mx-auto rounded"
             alt={"logo"}
           />
-          <h1 className="text-2xl text-black font-bold mt-4">Zplus7</h1>
+          {/* <h1 className="text-2xl text-black font-bold mt-4">Zplus7</h1> */}
         </Link>
         <div className="flex flex-row place-content-center mt-3 text-black">
           <Link href="/about" className="underline underline-offset-2 hover:underline-offset-4 mr-3" >about</Link>
@@ -32,7 +38,7 @@ export default function RootLayout({
   const footer = (
     <footer>
       <div className="border-t border-slate-400 mt-12 py-6 text-center text-slate-400">
-        <h3>Deployed by Vercel</h3>
+        <h3>普拉思在奔跑...</h3>
       </div>
     </footer>
   );
