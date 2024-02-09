@@ -3,7 +3,7 @@ import { Pagination, ConfigProvider } from "antd"
 import PostPreview from "../components/PostPreview";
 import { useState } from "react";
 
-export default function Show(props: any) {
+export default function ShowCardPage(props: any) {
 
 
     const [minValue, setMinValue] = useState(0);
@@ -28,9 +28,6 @@ export default function Show(props: any) {
                         <PostPreview key={post.slug} {...post} />
                         // 这里用...是因为父子组件传值不能传一整个数组，要解构
                     ))}
-
-
-
                 </div>
                 <ConfigProvider
                     theme={{

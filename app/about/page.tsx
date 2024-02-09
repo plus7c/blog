@@ -19,7 +19,7 @@ function About() {
         <div className="my-2 ml-5 h-4">
         <a href="https://github.com/plus7c"><h2 className="my-1"><img className="float-left mr-2" src="/images/github.png" alt="" width={20} height={16} /></h2></a>
         <a href="https://juejin.cn/user/3400155979058925?"> <h2 className="my-1"><img className="float-left mr-2" src="/images/juejin.png" alt="" width={20} height={16} /></h2></a>
-        <a href="https://twitter.com/Zplus7119495"> <h2 className="my-1"><img className="float-left mr-2" src="/images/twitter.png" alt="" width={20} height={16} /></h2></a>
+        <a href="https://twitter.com/plus7zzz"> <h2 className="my-1"><img className="float-left mr-2" src="/images/twitter.png" alt="" width={20} height={16} /></h2></a>
         <a href="mailto:plus27@qq.com"> <h2 className="my-1"><img className="float-left mr-2" src="/images/email.png" alt="" width={20} height={16} /></h2></a>
       </div>
 

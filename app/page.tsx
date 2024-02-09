@@ -1,7 +1,7 @@
 
 import getPostMetadata from "../components/getPostMetadata";
 
-import Show from "../components/showAndNav"
+import ShowCardPage from "../components/showAndNav"
 
 
 
@@ -11,9 +11,7 @@ const HomePage = () => {
   
   return (
     <>
-      
-      <Show postMetadata={postMetadata}></Show>
-
+      <ShowCardPage postMetadata={postMetadata}></ShowCardPage>
     </>
 
   );
