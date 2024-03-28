@@ -4,7 +4,7 @@ import "../styles/globals.css";
 
 
 export const metadata = {
-  title:"Zplus7",
+  title:"普拉思在敲门",
   description:"This is my blog"
 }
 
