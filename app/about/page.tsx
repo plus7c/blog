@@ -8,7 +8,7 @@ function About() {
       <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"></link>
       <strong>About / 关于我</strong>
       <div className="my-1 ml-5">
-        <h2 className="my-1">🎓&nbsp;我是普拉思，GZHU大三学生，目前在Lalamove实习 <br /></h2>
+        <h2 className="my-1">🎓&nbsp;我是普拉思，计科大三学生，曾在货拉拉司机平台组实习 <br /></h2>
         <h2 className="my-1">🌱&nbsp;我对编程世界充满了热情，希望在此记录下我的技术成长之路。<br /></h2>
         <h2 className="my-1">🚴‍♀️&nbsp;此外，我也会在这里分享生活中的所闻、所见、所思</h2>
       </div>
@@ -17,7 +17,7 @@ function About() {
         <img className="m-auto" alt="GIF" src="/images/gif3.gif" width={300} height={250} />
       </div>
 
-      <strong> 联系方式 </strong>
+      <strong> 个人链接 </strong>
       
         <div className="my-2 ml-5 h-4">
         <a href="https://github.com/plus7c"><h2 className="my-1"><img className="float-left mr-2" src="/images/github.png" alt="" width={20} height={16} /></h2></a>

@@ -28,8 +28,8 @@ export default function RootLayout({
           {/* <h1 className="text-2xl text-black font-bold mt-4">Zplus7</h1> */}
         </Link>
         <div className="flex flex-row place-content-center mt-3 text-black">
-          <Link href="/about" className="underline underline-offset-2 hover:underline-offset-4 mr-3" >about</Link>
-          <a className="underline underline-offset-2 hover:underline-offset-4 focus:underline-offset-4 mr-3" href="/">blog</a>
+          <Link href="/about" className="underline underline-offset-2 hover:underline-offset-4 mr-3" >关于我</Link>
+          <a className="underline underline-offset-2 hover:underline-offset-4 focus:underline-offset-4 mr-3" href="/">文章列表</a>
         </div>
       </div>
     </header>
