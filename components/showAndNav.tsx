@@ -5,7 +5,6 @@ import { useState } from "react";
 
 export default function ShowCardPage(props: any) {
 
-
     const [minValue, setMinValue] = useState(0);
     const [maxValue, setMaxValue] = useState(6);
 
@@ -16,13 +15,14 @@ export default function ShowCardPage(props: any) {
         } else {
             setMinValue((page - 1) * 6);
             setMaxValue((page - 1) * 6 + 6);
-
         }
     };
+    
     return (
         <>
             <div className="">
-                <div className="flex flex-wrap justify-around gap-4 ">{props.postMetadata
+                <div className="flex flex-wrap justify-around gap-4 ">
+                    {props.postMetadata
                     && props.postMetadata.length > 0
                     && props.postMetadata.slice(minValue, maxValue).map((post: any) => (
                         <PostPreview key={post.slug} {...post} />
