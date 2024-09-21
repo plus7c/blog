@@ -1,26 +1,41 @@
 'use client'
 import { Pagination, ConfigProvider } from "antd"
 import PostPreview from "../components/PostPreview";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { useSearchParams, useRouter } from 'next/navigation';
+
 
 export default function ShowCardPage(props: any) {
+    const searchParams = useSearchParams();
+    const router = useRouter();
 
-    const [minValue, setMinValue] = useState(0);
-    const [maxValue, setMaxValue] = useState(6);
+    const initialPage = parseInt(searchParams.get('page') || '1', 10);
+    const pageSize = 6;
+
+    const [currentPage, setCurrentPage] = useState(initialPage);
+    const [minValue, setMinValue] = useState((initialPage - 1) * pageSize);
+    const [maxValue, setMaxValue] = useState(initialPage * pageSize);
+
+    useEffect(() => {
+        setMinValue((currentPage - 1) * pageSize);
+        setMaxValue(currentPage * pageSize);
+    }, [currentPage]);
+
+    useEffect(() => {
+        const page = parseInt(searchParams.get('page') || '1', 10);
+        if (page !== currentPage) {
+            setCurrentPage(page);
+        }
+    }, [searchParams]);
 
     const handlePageChange = (page: number, pageSize: number) => {
-        if (page <= 1) {
-            setMinValue(0);
-            setMaxValue(6);
-        } else {
-            setMinValue((page - 1) * 6);
-            setMaxValue((page - 1) * 6 + 6);
-        }
+        setCurrentPage(page);
+        // 更新 URL 的 page 查询参数
+        router.push(`?page=${page}`);
     };
     
     return (
-        <>
-            <div className="">
+            <>
                 <div className="flex flex-wrap justify-around gap-4 ">
                     {props.postMetadata
                     && props.postMetadata.length > 0
@@ -37,12 +52,15 @@ export default function ShowCardPage(props: any) {
                     }}
                 >
                     <div className="mt-10 flex justify-center">
-                        <Pagination defaultCurrent={1} defaultPageSize={6} onChange={handlePageChange} total={props.postMetadata.length} />
+                        <Pagination
+                        current={currentPage}
+                        pageSize={pageSize} 
+                        onChange={handlePageChange} 
+                        total={props.postMetadata.length}
+                        />
                     </div>
                 </ConfigProvider>
-            </div>
-        </>
-
+            </>
     )
 
 };

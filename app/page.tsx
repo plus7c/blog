@@ -10,10 +10,7 @@ const HomePage = () => {
   const postMetadata = getPostMetadata();
   
   return (
-    <>
       <ShowCardPage postMetadata={postMetadata}></ShowCardPage>
-    </>
-
   );
 };
 

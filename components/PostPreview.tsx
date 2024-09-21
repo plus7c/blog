@@ -2,14 +2,11 @@ import Link from "next/link";
 import { PostMetadata } from "./PostMetadata";
 import { Card } from "antd";
 import '../styles/font/iconfont.css'
-// import { useRouter } from 'next/navigation'
 const PostPreview = (props: PostMetadata) => {
-  // const router = useRouter()
   return (
     <>
       <link rel="stylesheet" href="../styles/iconfont.css" />
       <Link href={`/posts/${props.slug}`}>
-      {/* <button type="button" onClick={() => router.push(`/posts/${props.slug}`)}> */}
         <Card
           size="small"
           hoverable
@@ -29,7 +26,6 @@ const PostPreview = (props: PostMetadata) => {
           </div>
 
         </Card>
-        {/* </button> */}
       </Link>
     </>
 
