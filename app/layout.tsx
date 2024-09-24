@@ -38,7 +38,7 @@ export default function RootLayout({
   const footer = (
     <footer>
       <div className="border-t border-slate-400 mt-12 py-6 text-center text-slate-400">
-        <h3>普拉思在奔跑...</h3>
+        <h3>A letter to my future self</h3>
       </div>
     </footer>
   );
